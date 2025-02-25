@@ -38,6 +38,9 @@ import { SpinningText } from "@/components/magicui/spinning-text";
 import Navbar from "@/components/ui/Navbar";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { AnimatedPinDemo } from "@/components/3dpinComponent";
+import BentoGridComponent from "@/components/BentoGridComponent";
+import { TimelineComponent } from "@/components/TimelineComponent";
+import StickyScrollComponenet from "@/components/StickyScrollComponenet";
 // import { Marquee } from "@components/magicui/marquee";
 
 export default function Home() {
@@ -217,7 +220,8 @@ export default function Home() {
         </MenubarMenu>
       </Menubar> */}
 
-      <Timeline data={data} />
+      <TimelineComponent />
+      <StickyScrollComponenet />
 
       <div className="p-10 w-full">
         <StickyScroll content={content} />
@@ -225,80 +229,25 @@ export default function Home() {
 
       <FlowingMenu items={demoItems} />
 
-      <div className="">
-        <SplitText
-          text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center text-white"
-          delay={150}
-          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-          threshold={0.2}
-          rootMargin="-50px"
-        />
-      </div>
+      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
+        <AuroraText>Hello, Tailwind!</AuroraText>
+      </h1>
 
-      <BentoGrid className="max-w-7xl mx-auto gap-12">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
+      <BentoGridComponent />
 
-      <div className="">
-        <SplitText
-          text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center text-white"
-          delay={150}
-          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-          threshold={0.2}
-          rootMargin="-50px"
-        />
-      </div>
+      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
+        <AuroraText>Hello, Tailwind!</AuroraText>
+      </h1>
 
-      <BentoGrid className="max-w-7xl mx-auto gap-12">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
+      <BentoGridComponent />
 
-      <div className="">
-        <SplitText
-          text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center text-white"
-          delay={150}
-          animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-          animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-          threshold={0.2}
-          rootMargin="-50px"
-        />
-      </div>
+      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
+        <AuroraText>Hello, Tailwind!</AuroraText>
+      </h1>
 
-      <BentoGrid className="max-w-7xl mx-auto gap-12">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
+      <BentoGridComponent />
+
+
       <div className="">
         <SplitText
           text="Hello, Tailwind!"
