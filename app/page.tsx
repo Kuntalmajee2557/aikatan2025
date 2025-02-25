@@ -1,6 +1,8 @@
 "use client"
 import Image from "next/image";
 import img from "@/public/images/img.png"
+import aikatanlogo from "@/public/images/aikatan logo.jpg"
+
 import { Button } from "@/components/ui/button";
 import {
   Menubar,
@@ -32,6 +34,10 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
+import { SpinningText } from "@/components/magicui/spinning-text";
+import Navbar from "@/components/ui/Navbar";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { AnimatedPinDemo } from "@/components/3dpinComponent";
 // import { Marquee } from "@components/magicui/marquee";
 
 export default function Home() {
@@ -173,14 +179,26 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-stone-700 flex flex-col items-center w-full">
+    <div className="min-h-screen bg-stone-950 flex flex-col items-center w-full">
       {/* <TracingBeam className="px-10"> */}
+      <Navbar></Navbar>
+      {/* <FloatingNav navItems={navItems} /> */}
 
-      <FloatingNav navItems={navItems} />
+      <div className="relative h-screen w-full flex items-center justify-center">
 
-      <div className="h-screen w-full m-0 p-0 border border-red-800">
-        <Image src={img} className="cover" alt="no image found"></Image>
+
+
+        <div className="h-72 w-72 absolute ">
+          <Image src={aikatanlogo} alt="no image found" layout="fill" objectFit="cover" />
+        </div>
+        <SpinningText className="text-white text-1xl font-bold" radius={20}>Akitan • RKMGEC • Akitan • RKMGEC • Akitan • RKMGEC •</SpinningText>;
+        <Image src={img} alt="no image found" layout="fill" objectFit="cover" />
+        <div className="absolute left-[-26px] bottom-[7px]">
+        <AnimatedPinDemo></AnimatedPinDemo>
+        </div>
+
       </div>
+
 
 
       {/* <Menubar>
@@ -210,7 +228,7 @@ export default function Home() {
       <div className="">
         <SplitText
           text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center"
+          className="text-2xl font-semibold text-center text-white"
           delay={150}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
           animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -235,7 +253,7 @@ export default function Home() {
       <div className="">
         <SplitText
           text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center"
+          className="text-2xl font-semibold text-center text-white"
           delay={150}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
           animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -260,7 +278,7 @@ export default function Home() {
       <div className="">
         <SplitText
           text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center"
+          className="text-2xl font-semibold text-center text-white"
           delay={150}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
           animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -284,7 +302,7 @@ export default function Home() {
       <div className="">
         <SplitText
           text="Hello, Tailwind!"
-          className="text-2xl font-semibold text-center"
+          className="text-2xl font-semibold text-center text-white"
           delay={150}
           animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
           animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -304,9 +322,12 @@ export default function Home() {
             <ReviewCard key={review.username} {...review} />
           ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-4/5 bg-gradient-to-r from-stone-950 via-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-4/5 bg-gradient-to-l from-stone-950 via-transparent"></div>
       </div>
+      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white">
+        Ship <AuroraText className="bg-transparent">beautiful</AuroraText>
+      </h1>
 
       {/* </TracingBeam> */}
     </div>
@@ -423,21 +444,21 @@ const ReviewCard = ({
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "border-stone-50/[.1] bg-gray-50/[.10] hover:bg-gray-50/[.15]",
         // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "dark:border-stone-50/[.1] bg-gray-50/[.10] hover:bg-gray-50/[.15]",
       )}
     >
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-sm font-medium text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-xs font-medium text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-sm text-white">{body}</blockquote>
     </figure>
   );
 };
