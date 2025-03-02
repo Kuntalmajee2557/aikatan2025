@@ -12,7 +12,7 @@ export const TechlavyaEvent: CardData[] = [
     id: 1,
     title: "Analytics Dashboard",
     description: "Comprehensive analytics solution with real-time data visualization.",
-    image: "/images/img.png", // Image should be in `public/images/`
+    image: "/events/techlavya.png", // Image should be in `public/images/`
     buttonText: "Register now",
     link: "https://example.com/analytics"
   },
@@ -106,7 +106,7 @@ export const CulturalEvent: CardData[] = [
     id: 2,
     title: "E-commerce Platform",
     description: "Complete online store solution with payment processing and inventory management.",
-    image: "/images/img.png",
+    image: "/events/djkoyel.jpg",
     buttonText: "Register now",
     link: "https://example.com/ecommerce"
   },

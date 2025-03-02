@@ -20,6 +20,8 @@ import { CulturalEvent, EsportsEvent, TechlavyaEvent } from "@/data/cardData";
 import CardGrid from "@/components/ui/CardGrid";
 import MisonaryComponent from "@/components/MisonaryComponent";
 import { reviews } from "@/data/sponsor";
+import Gallery from "@/components/ui/Gallery";
+import { images } from "@/data/gallery";
 
 export default function Home() {
   return (
@@ -40,40 +42,46 @@ export default function Home() {
 
       {/* <FlowingMenuComponent /> */}
 
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
-        <AuroraText>Techlavya Event</AuroraText>
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white p-12">
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">Techlavya</span> Event
       </h1>
+
 
       {/* <BentoGridComponent /> */}
       <CardGrid cards={TechlavyaEvent} />
 
 
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
-        <AuroraText>ESPORTS Event</AuroraText>
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white p-12">
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">ESPORTS</span> Event
       </h1>
 
       <CardGrid cards={EsportsEvent} />
 
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
-        <AuroraText>CULTURAL EVENT</AuroraText>
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white p-12">
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">CULTURAL</span> Event
       </h1>
 
       {/* <BentoGridComponent /> */}
       <CardGrid cards={CulturalEvent} />
 
-      
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
-        <AuroraText>GALLERY</AuroraText>
+
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white p-12">
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">GALLERY</span>
       </h1>
 
-      <MisonaryComponent />
+
+      <div className="p-6">
+        <Gallery images={images} />
+      </div>
+      {/* <MisonaryComponent /> */}
       {/* <RollingGallery autoplay={true} pauseOnHover={true} /> */}
 
-      <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-white p-14">
-        <AuroraText>OUR SPONSERS</AuroraText>
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white p-12">
+        OUR  
+        <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">  SPONSERS</span>
       </h1>
 
-      <MarqueeComponent reviews={reviews}/>
+      <MarqueeComponent reviews={reviews} />
 
       <Footer />
 
