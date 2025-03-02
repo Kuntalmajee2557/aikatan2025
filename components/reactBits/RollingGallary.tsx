@@ -34,6 +34,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   // Use default images if none are provided
   const galleryImages = images.length > 0 ? images : IMGS;
 
+  // Track screen size for responsiveness
   const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(
     window.innerWidth <= 640
   );
@@ -43,10 +44,11 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 3D geometry calculations
-  const cylinderWidth: number = isScreenSizeSm ? 1100 : 1800;
+  // Increase the cylinder width to allow for larger images while keeping a circular layout
+  const cylinderWidth: number = isScreenSizeSm ? 1300 : 2200;
   const faceCount: number = galleryImages.length;
-  const faceWidth: number = (cylinderWidth / faceCount) * 1.5;
+  // Increase faceWidth multiplier to fit larger images
+  const faceWidth: number = (cylinderWidth / faceCount) * 1.8;
   const radius: number = cylinderWidth / (2 * Math.PI);
 
   // Framer Motion values and controls
@@ -115,6 +117,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
 
   return (
     <div className="relative h-[500px] w-full overflow-hidden">
+      {/* Left gradient */}
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
@@ -122,6 +125,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
             "linear-gradient(to left, rgba(0,0,0,0) 0%, #060606 100%)",
         }}
       />
+      {/* Right gradient */}
       <div
         className="absolute top-0 right-0 h-full w-[48px] z-10"
         style={{
@@ -159,7 +163,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               <img
                 src={url}
                 alt="gallery"
-                className="pointer-events-none h-[150px] w-[550px] rounded-[15px] border-[1px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                className="pointer-events-none h-[220px] w-[700px] rounded-[15px] border-[1px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-110 sm:h-[150px] sm:w-[300px]"
               />
             </div>
           ))}

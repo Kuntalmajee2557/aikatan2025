@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Calendar, PartyPopper, Image, BookOpen, X } from 'lucide-react';
-import { ShinyButton } from './ShinyButton';
-import { InteractiveHoverButton } from '../magicui/interactive-hover-button';
+import { Home, Calendar, PartyPopper, Image, Users, MoreHorizontal, X, Sun, Moon } from 'lucide-react';
+import { EventDropdown } from './EventDropdown';
+import { MoreDropdown } from './MoreDropdown';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,18 +37,11 @@ const Navbar = () => {
               <div className="flex items-center space-x-1 bg-stone-500/10 backdrop-blur-sm px-2 py-1 rounded-2xl">
                 <NavItem icon={<Home size={18} />} text="Home" active />
                 <NavItem icon={<Calendar size={18} />} text="Schedule" />
-                <NavItem icon={<PartyPopper size={18} />} text="Event" />
+                <EventDropdown />
                 <NavItem icon={<Image size={18} />} text="Gallery" />
+                <NavItem icon={<Users size={18} />} text="Teams" />
+                <MoreDropdown />
               </div>
-            </div>
-
-            <div className="hidden md:block">
-              {/* <button className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl font-medium flex items-center space-x-2 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 ease-out transform hover:scale-105">
-                <BookOpen size={18} />
-                <span>Book Now</span>
-              </button> */}
-              {/* <ShinyButton>Shiny Button</ShinyButton> */}
-              <InteractiveHoverButton>Register now</InteractiveHoverButton>
             </div>
 
             <div className="md:hidden">
@@ -93,15 +86,21 @@ const Navbar = () => {
           <div className="flex flex-col space-y-2">
             <MobileNavItem icon={<Home size={18} />} text="Home" active />
             <MobileNavItem icon={<Calendar size={18} />} text="Schedule" />
-            <MobileNavItem icon={<PartyPopper size={18} />} text="Event" />
+            
+            <div className="px-4 py-2 text-xs font-semibold text-gray-400 border-b border-stone-700">Events</div>
+            <MobileNavItem icon={<PartyPopper size={18} className="text-purple-400" />} text="Techlavya" />
+            <MobileNavItem icon={<PartyPopper size={18} className="text-green-400" />} text="Esports" />
+            <MobileNavItem icon={<PartyPopper size={18} className="text-pink-400" />} text="Cultural" />
+            
             <MobileNavItem icon={<Image size={18} />} text="Gallery" />
-          </div>
-
-          <div className="mt-8">
-            <button className="w-full px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl font-medium flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 ease-out">
-              <BookOpen size={18} />
-              <span>Book Now</span>
-            </button>
+            <MobileNavItem icon={<Users size={18} />} text="Teams" />
+            
+            <div className="px-4 py-2 text-xs font-semibold text-gray-400 border-b border-stone-700">More</div>
+            <MobileNavItem icon={<Sun size={18} className="text-yellow-500" />} text="Sponsors" />
+            <MobileNavItem icon={<Moon size={18} className="text-blue-400" />} text="Contact Us" />
+            <MobileNavItem icon={<Moon size={18} className="text-blue-400" />} text="About" />
+            <MobileNavItem icon={<Moon size={18} className="text-blue-400" />} text="T&C" />
+            <MobileNavItem icon={<Moon size={18} className="text-blue-400" />} text="Privacy & Policy" />
           </div>
         </div>
       </div>
